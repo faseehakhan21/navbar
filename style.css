@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+
+.topnav img {
+  height: 40px;
+  margin: 0 20px;
+}
+
+.topnav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.topnav ul li {
+  position: relative;
+}
+.topnav ul li:hover{
+  background-color: #04AA6D;
+}
+.topnav ul li:focus{
+  background-color: #0ed60e;
+}
+.topnav ul li a {
+  text-decoration: none;
+  color: #000;
+  padding: 0 15px;
+  line-height: 32px;
+  display: block;
+  position: relative;
+}
+.topnav ul li a:hover{
+  color: #fff;
+}
+.topnav ul li .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.topnav ul li .dropdown-menu li {
+  float: none;
+  width: 100%;
+}
+
+.topnav ul li .dropdown-menu a {
+  padding: 10px 15px;
+  color: #000;
+  text-decoration: none;
+  display: block;
+}
+
+
+.topnav ul li:hover .dropdown-menu,
+.topnav ul li .dropdown-menu.active {
+  display: block;
+}
+
+#search {
+  padding: 5px;
+  font-size: 16px;
+  border: 2px solid gray;
+  outline: none;
+  border-radius: 22px;
+}
+#search:focus{
+  border: 2px solid #04AA6D;
+}
+
+
+.button{
+  margin-right: 20px;
+} 
+#signbtn {
+  width: 100px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #04aa6d;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  transition: all 0.5s ease-in-out;
+  border-radius: 25px;
+}
+#logbtn {
+  width: 100px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #d9eee1;
+  border-radius: 5px;
+  color: #000000;
+  border: none;
+  transition: all 0.5s ease-in-out;
+  border-radius: 25px;
+}
+
+#signbtn:hover{
+  background-color: #02633f;
+
+}
+#logbtn:hover{
+  background-color: #02633f;
+  color: #fff;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle.open {
+  transform: rotate(45deg);
+}
+
+.menu-toggle.open i:before {
+  content: "\f00d"; /* Font Awesome code for the cross icon */
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .topnav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f8f8f8;
+  }
+
+  .topnav ul.active {
+    display: flex;
+  }
+
+  .topnav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .button {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  #search {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+.main{
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.main ul{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1b1a17;
+}
+
+.main ul li{
+  list-style: none;
+}
+.main ul li:hover{
+  background-color: #02633f;
+}
+.main ul li a{
+  text-decoration: none;
+  color: #fff;
+  line-height: 32px;
+  padding: 0 15px;
+}
+.body{
+  display: flex;
+  transition: margin-left 0.3s;
+}
+.sidebar{
+  width: 15%;
+  height: 80vh;
+  overflow-y: auto;
+  white-space: nowrap;
+  border-right: 1px solid black;
+   position: fixed;
+  left: 0;
+  top: 70; 
+  transition: transform 0.3s ease;
+  transform: translateX(-250px); 
+  z-index: 1000;
+  background-color: #fff;
+}
+
+
+.sidebar ul li a{
+  text-decoration: none;
+  color: #000;
+  padding: 0 20px;
+  line-height: 32px;
+  display: block;
+  width: 100%;
+} 
+.sidebar ul li a:hover{
+  color: #fff;
+  background-color: #04AA6D;
+}
+body.sidebar-open .sidebar {
+  transform: translateX(0);
+}
+.content {
+  margin-left: 0px;
+  flex-grow: 1;
+  transition: margin-left 0.3s;
+}
+.data{
+  padding: 20px;
+}
+body.sidebar-open .content {
+  margin-left: 200px;
+} 
+
+#togglebtn{
+  background-color: #04aa6d;
+  width: 166px;
+  height: 50px;
+  padding: 0 15px;
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  font-size: 22px;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+}
+#togglebtn:hover{
+  background-color: #02633f;
+
+}
+@media (max-width: 768px) {
+  .sidebar{
+    width: 50%;
+    height: 80vh;
+  }
+}
+
+.footer{
+  position: fixed;
+  height: 40px;
+  width: 100%;
+  bottom: 0;
+  background-color: #1b1a17;
+  color: #fff;
+  text-align: center;
+  padding: 0 15px;
+  align-content: center;
+  margin: 0;
+}
